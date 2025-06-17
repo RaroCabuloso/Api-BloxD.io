@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Clear - Transformando o Ar que Você Respira</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        
+        .slide-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+        
+        .slide-active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .slide-title {
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100% - 100px);
+        }
+        
+        .slide-image {
+            max-width: 80%;
+            max-height: 60%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .slide-text {
+            max-width: 80%;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .slide-fala {
+            background-color: #e6f2ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 5px solid #0066cc;
+        }
+        
+        .slide-buttons {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        .nav-button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: #0055aa;
+        }
+        
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .mission-statement {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #0066cc;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .solution-item {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            width: 80%;
+        }
+        
+        .solution-title {
+            color: #0066cc;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #0066cc;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+        
+        .highlight {
+            color: #0066cc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1 - Abertura Impactante -->
+    <div class="slide-container slide-active" id="slide1">
+        <h1 class="slide-title">Sky Clear</h1>
+        <div class="slide-content">
+            <img src="https://i.ibb.co/zW99Frmx/images.jpg" alt="Céu poluído vs céu limpo" class="slide-image">
+            <div class="slide-fala">
+                "Respirar ar puro é um direito humano fundamental... mas hoje, 99% da população global respira ar com níveis inseguros de poluentes (OMS)."
+            </div>
+            <div class="slide-fala">
+                "Cidades perdem vidas, produtividade e qualidade de vida por causa de um inimigo invisível: a poluição atmosférica."
+            </div>
+            <div class="slide-fala">
+                "Na <span class="highlight">Sky Clear</span>, não apenas monitoramos esse problema: nós o combatemos com tecnologia de ponta."
+            </div>
+        </div>
+        <div class="slide-counter">Slide 1 de 9</div>
+    </div>
+    
+    <!-- Slide 2 - O Desafio: A Crise do Ar -->
+    <div class="slide-container" id="slide2">
+        <h1 class="slide-title">A Crise do Ar</h1>
+        <div class="slide-content">
+            <img src="https://i.ibb.co/zW99Frmx/images.jpg" alt="Estatísticas de poluição" class="slide-image">
+            <div class="slide-fala">
+                "A poluição não é só uma névoa incômoda; é uma crise de saúde pública e econômica."
+            </div>
+            <div class="slide-fala">
+                "Indústrias, transporte e agricultura são grandes emissores, mas soluções efetivas são complexas e caras."
+            </div>
+            <div class="slide-fala">
+                "Como equilibrar desenvolvimento industrial e qualidade do ar?"
+            </div>
+        </div>
+        <div class="slide-counter">Slide 2 de 9</div>
+    </div>
+    
+    <!-- Slide 3 - Apresentando a Sky Clear: Nossa Missão -->
+    <div class="slide-container" id="slide3">
+        <div class="slide-content">
+            <img src="https://i.ibb.co/rJNkXnG/images.png" alt="Logo Sky Clear" class="logo">
+            <div class="mission-statement">
+                "Tecnologia para Ar Puro. Resultados Mensuráveis."
+            </div>
+            <div class="slide-text">
+                <strong>Missão:</strong> "Desenvolver e implementar soluções inovadoras e escaláveis para monitorar, reduzir e prevenir a poluição atmosférica, garantindo um futuro respirável para todos."
+            </div>
+        </div>
+        <div class="slide-counter">Slide 3 de 9</div>
+    </div>
+    
+    <!-- Slide 4 - Nossas Soluções Inovadoras -->
+    <div class="slide-container" id="slide4">
+        <h1 class="slide-title">Nossas Soluções</h1>
+        <div class="slide-content">
+            <div class="solution-item">
+                <div class="solution-title">a) Monitoramento Inteligente em Tempo Real</div>
+                <div class="slide-fala">
+                    "Rede de sensores IoT de alta precisão e baixo custo, combinados com satélite e IA, para mapear poluentes com resolução espacial e temporal inédita."
+                </div>
+                <div class="slide-text">
+                    <em>Benefício:</em> Identificação precisa de fontes, alertas antecipados, dados para políticas públicas.
+                </div>
+            </div>
+            
+            <div class="solution-item">
+                <div class="solution-title">b) Sistemas de Filtragem e Neutralização Avançados</div>
+                <div class="slide-fala">
+                    "Filtros eletrostáticos e catalisadores nanoestruturados para indústrias e grandes infraestruturas (portos, terminais). Removem até 99% de partículas finas (PM2.5) e convertem gases nocivos (NOx) em substâncias inertes."
+                </div>
+                <div class="slide-text">
+                    <em>Benefício:</em> Redução drástica de emissões, compliance regulatório, melhoria da saúde local.
+                </div>
+            </div>
+            
+            <div class="solution-item">
+                <div class="solution-title">c) Plataforma de Gestão "ClearAir Analytics"</div>
+                <div class="slide-fala">
+                    "Dashboard integrado que correlaciona dados de emissões, meteorologia e saúde, prevendo impactos e otimizando estratégias de mitigação."
+                </div>
+                <div class="slide-text">
+                    <em>Benefício:</em> Tomada de decisão baseada em dados, ROI mensurável, relatórios automáticos para órgãos ambientais.
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">Slide 4 de 9</div>
+    </div>
+    
+    <!-- Slide 5 - Diferenciais Competitivos -->
+    <div class="slide-container" id="slide5">
+        <h1 class="slide-title">Diferenciais Competitivos</h1>
+        <div class="slide-content">
+            <table class="comparison-table">
+                <tr>
+                    <th>Critério</th>
+                    <th>Sky Clear</th>
+                    <th>Soluções Tradicionais</th>
+                </tr>
+                <tr>
+                    <td>Precisão & Cobertura</td>
+                    <td>Combinação única de sensores terrestres, satélite e IA</td>
+                    <td>Dados limitados ou imprecisos</td>
+                </tr>
+                <tr>
+                    <td>Eficiência & Custo</td>
+                    <td>Tecnologias proprietárias mais eficientes e com TCO menor</td>
+                    <td>Soluções caras e pouco eficientes</td>
+                </tr>
+                <tr>
+                    <td>Abordagem</td>
+                    <td>Do diagnóstico preciso à solução efetiva e monitoramento contínuo</td>
+                    <td>Soluções pontuais e desconectadas</td>
+                </tr>
+                <tr>
+                    <td>Escalabilidade</td>
+                    <td>Adaptável de pequenas indústrias a cidades inteiras</td>
+                    <td>Soluções rígidas e pouco escaláveis</td>
+                </tr>
+            </table>
+        </div>
+        <div class="slide-counter">Slide 5 de 9</div>
+    </div>
+    
+    <!-- Slide 6 - Impacto Tangível -->
+    <div class="slide-container" id="slide6">
+        <h1 class="slide-title">Impacto Tangível</h1>
+        <div class="slide-content">
+            <img src="https://i.ibb.co/prh6RWQm/images-1.png" alt="Gráficos de redução de poluentes" class="slide-image">
+            <div class="slide-fala">
+                "Na planta industrial X, reduzimos emissões de PM2.5 em 92% em 6 meses."
+            </div>
+            <div class="slide-fala">
+                "Parceria com a Prefeitura de Y: nosso sistema de monitoramento identificou fontes não reguladas, direcionando políticas que melhoraram o Índice de Qualidade do Ar (IQA) em 30%."
+            </div>
+            <div class="slide-fala">
+                "Impacto além do ambiental: redução de custos com saúde, aumento da produtividade e valorização de marcas comprometidas."
+            </div>
+        </div>
+        <div class="slide-counter">Slide 6 de 9</div>
+    </div>
+    
+    <!-- Slide 7 - Visão de Futuro -->
+    <div class="slide-container" id="slide7">
+        <h1 class="slide-title">Visão de Futuro</h1>
+        <div class="slide-content">
+            <img src="https://i.ibb.co/sJWJ1TDc/images-5.jpg" alt="Cidade futurista limpa" class="slide-image">
+            <div class="slide-fala">
+                "Queremos ser a referência global em tecnologias de ar limpo."
+            </div>
+            <div class="slide-fala">
+                "Expandindo para novos mercados: monitoramento interno (edifícios, escolas), soluções para agricultura de precisão e captura de carbono."
+            </div>
+            <div class="slide-fala">
+                "Investindo em P&D contínuo: novos materiais filtrantes e modelos preditivos ainda mais precisos."
+            </div>
+        </div>
+        <div class="slide-counter">Slide 7 de 9</div>
+    </div>
+    
+    <!-- Slide 8 - Conclusão e Call to Action -->
+    <div class="slide-container" id="slide8">
+        <div class="slide-content">
+            <img src="https://i.ibb.co/rJNkXnG/images.png" alt="Logo Sky Clear" class="logo">
+            <div class="mission-statement">"Juntos por um ar mais puro."</div>
+            <div class="slide-fala">
+                "A poluição atmosférica é um desafio complexo, mas solucionável. Com tecnologia, inovação e parceria."
+            </div>
+            <div class="slide-fala">
+                "A Sky Clear possui as ferramentas para transformar o ar das suas operações, da sua cidade, do nosso planeta."
+            </div>
+            <div class="slide-fala">
+                "Convidamos você a fazer parte desta mudança. Vamos conversar sobre como podemos implementar soluções Sky Clear para você?"
+            </div>
+            <div class="contact-info">
+                <strong>Contato:</strong> contato@skyclear.com | (XX) XXXX-XXXX
+            </div>
+        </div>
+        <div class="slide-counter">Slide 8 de 9</div>
+    </div>
+    
+    <!-- Slide 9 - Perguntas & Respostas -->
+    <div class="slide-container" id="slide9">
+        <div class="slide-content">
+            <img src="https://i.ibb.co/rJNkXnG/images.png" alt="Logo Sky Clear" class="logo">
+            <h1 class="slide-title">Perguntas?</h1>
+            <div class="contact-info">
+                <strong>Contato:</strong> contato@skyclear.com | (XX) XXXX-XXXX
+            </div>
+        </div>
+        <div class="slide-counter">Slide 9 de 9</div>
+    </div>
+    
+    <div class="slide-buttons">
+        <button class="nav-button" id="prevBtn">Anterior</button>
+        <button class="nav-button" id="nextBtn">Próximo</button>
+    </div>
+    
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 9;
+        
+        function showSlide(n) {
+            // Esconde todos os slides
+            document.querySelectorAll('.slide-container').forEach(slide => {
+                slide.classList.remove('slide-active');
+            });
+            
+            // Mostra o slide atual
+            document.getElementById(`slide${n}`).classList.add('slide-active');
+            
+            // Atualiza o contador
+            document.querySelectorAll('.slide-counter').forEach(counter => {
+                counter.textContent = `Slide ${n} de ${totalSlides}`;
+            });
+            
+            // Atualiza o botão anterior
+            document.getElementById('prevBtn').style.display = n === 1 ? 'none' : 'block';
+            
+            // Atualiza o botão próximo
+            document.getElementById('nextBtn').textContent = n === totalSlides ? 'Fim' : 'Próximo';
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+        
+        // Event listeners
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+        
+        // Teclado
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Inicializa
+        showSlide(1);
+    </script>
+</body>
+</html>
